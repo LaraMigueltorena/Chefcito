@@ -20,12 +20,26 @@ export default function TabLayout() {
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
           default: {},
         }),
-      }}>
+      }}
+    >
+      <Tabs.Screen
+        name="cursos"
+        options={{
+          title: 'Cursos',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="book.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="favoritos"
+        options={{
+          title: 'Favoritos',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="heart.fill" color={color} />,
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
@@ -34,10 +48,17 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="crear_receta"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Crear',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="plus.circle.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="perfil"
+        options={{
+          title: 'Perfil',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.crop.circle" color={color} />,
         }}
       />
     </Tabs>
